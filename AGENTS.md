@@ -111,6 +111,7 @@ app-gods-eye-view/
 - 修改前先確認計畫，優先保留原有資料結構
 - **直接在 `main` 上開發，不開功能分支**（使用者決定）。因此：合上游前先把手上的東西 commit 掉；用 `git merge upstream/main` 而非 rebase（public fork，改寫歷史要強制推送）；要看哪些 commit 是自己的，用 `git log --oneline upstream/main..main`
 - **含正規表示式的程式碼一律用 Write/Edit 工具寫，不要用 heredoc**（`cat > file <<'EOF'` 會吃掉一層反斜線，`[\s\S]` 變成 `[sS]`，而且症狀極隱蔽）
+- **產出一律放 `output/`**：本專案產生的檔案或資料夾（成品、匯出、報表、生成圖、渲染等）預設放專案根目錄的 `output/`，不另開 `outputs/`、`exports/`、`generated/`、`out/` 之類的資料夾，方便找；`output/` 不進 git。部署工具指定的建置目錄（`dist/`、`build/`）不在此限
 
 ## Claude Code 專屬
 
